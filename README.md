@@ -1,7 +1,17 @@
-# SIEM-Wazuh
-V rámci tréningu a vzělávání jsem se rozhodl nakonfigurovat a zprovoznit si SIEM Wazuh. 
-Hlavní host jsem vytvořil v OS Ubuntu 24.04.3 LTS
-Pro praktičnost jsem vytvořil jednoho agenta ve WM přes GNUbuntu 24.04.01
-Agent musel být vytvořen ve VM protože na stejném zařízení se to mlátilo v adresářích s host files kam potřebují oba přistupovat.
-Po nastavení hosta jsem začal objevovat alerty, které se vytvořily díky defaultním pravidlům. Z mého zjištění většina alertů byla vygenerévána faktem že se jedná o VM. Konkrétní alert byl třeba "nesrovnalost mezi počtem souborů v adresáři a link countem" standartně by to evokovalo podeřelou aktivitu v souborovém systému ale tady je to zapřičíněno virtualizací.
-Aktuálně pracuji na tom abych se naučil tvořit svá jednoduchá pravidla, která budu samozřejmě testovat a zaznamenávat zde v repozitáři
+# SIEM Wazuh – Tréninkový projekt
+
+## Úvod
+V rámci tréninku a vzdělávání jsem se rozhodl nakonfigurovat a zprovoznit SIEM **Wazuh**.  
+Cílem je naučit se pracovat s alerty, pravidly a správou agentů.
+## Prostředí
+- **Host**: Ubuntu 24.04.3 LTS  
+- **Agent**: GNUbuntu 24.04.01 ve virtuálním stroji (VM)  
+  - VM bylo nutné kvůli konfliktům v adresářích host files.
+## Alerty
+Po základní konfiguraci se začaly objevovat alerty z defaultních pravidel.  
+Většina byla způsobena tím, že agent běží ve VM.  
+Příklad alertu: *„Nesrovnalost mezi počtem souborů v adresáři a link countem“*  
+→ v běžném prostředí by to mohlo znamenat podezřelou aktivitu, zde je to dáno virtualizací.
+## Další kroky
+- Naučit se tvořit vlastní jednoduchá pravidla.  
+- Testovat je a zaznamenávat výsledky přímo v tomto repozitáři.
